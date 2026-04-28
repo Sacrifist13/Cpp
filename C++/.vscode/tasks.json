@@ -1,0 +1,30 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "C++ Debug Build",
+            "type": "cppbuild",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-g",
+                "-Wall", "-Wextra", "-Werror", 
+                "${file}",
+                "-o", "${fileDirname}/${fileBasenameNoExtension}_debug"
+            ],
+            "group": "build"
+        },
+        {
+            "label": "C++ Release Build",
+            "type": "cppbuild",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-O2",
+                "-DNDEBUG",
+                "-Wall", "-Wextra", "-Werror",
+                "${file}",
+                "-o", "${fileDirname}/${fileBasenameNoExtension}_release"
+            ],
+            "group": "build"
+        }
+    ]
+}
